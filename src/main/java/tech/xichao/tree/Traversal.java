@@ -4,7 +4,7 @@ import java.util.Objects;
 import java.util.Stack;
 
 /**
- * Traverse
+ * 二叉树的遍历
  *
  * @author xichao
  * @date 20200330
@@ -40,6 +40,9 @@ public class Traversal {
         postOrderStack(root);
     }
 
+    /**
+     * 前序遍历 - 递归版
+     */
     public static void preOrderRecursive(TreeNode root) {
         if (Objects.isNull(root)) {
             return;
@@ -49,6 +52,9 @@ public class Traversal {
         preOrderRecursive(root.right);
     }
 
+    /**
+     * 前序遍历 - 非递归版
+     */
     public static void preOrderStack(TreeNode root) {
         Stack<TreeNode> treeStack = new Stack<>();
         TreeNode node = root;
@@ -65,6 +71,9 @@ public class Traversal {
 
     }
 
+    /**
+     * 后序遍历 - 递归版
+     */
     public static void postOrderRecursive(TreeNode root) {
         if (Objects.isNull(root)) {
             return;
@@ -74,6 +83,9 @@ public class Traversal {
         printNode(root);
     }
 
+    /**
+     * 后序遍历 - 非递归版
+     */
     public static void postOrderStack(TreeNode root) {
         Stack<TreeNode> treeStack = new Stack<>();
         TreeNode node = root;
@@ -90,6 +102,9 @@ public class Traversal {
 
     }
 
+    /**
+     * 中序遍历 - 递归版
+     */
     public static void midOrderRecursive(TreeNode root) {
         if (Objects.isNull(root)) {
             return;
@@ -99,6 +114,9 @@ public class Traversal {
         midOrderRecursive(root.right);
     }
 
+    /**
+     * 中序遍历 - 非递归版
+     */
     public static void midOrderStack(TreeNode root) {
         Stack<TreeNode> treeStack = new Stack<>();
         TreeNode node = root;

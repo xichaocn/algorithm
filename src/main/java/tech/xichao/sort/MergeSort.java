@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 /**
- * MergeSort
+ * 归并排序
  *
  * @author xichao
  * @date 20200330

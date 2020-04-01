@@ -1,4 +1,4 @@
-package tech.xichao;
+package tech.xichao.list;
 
 /**
  * 两数相加

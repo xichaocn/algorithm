@@ -1,9 +1,9 @@
-package tech.xichao;
+package tech.xichao.list;
 
 import java.util.Objects;
 
 /**
- * ReverseLinkedList
+ * 链表翻转
  *
  * @author xichao
  * @date 20200328

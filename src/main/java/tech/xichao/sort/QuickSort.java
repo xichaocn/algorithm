@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 /**
- * QuickSort
+ * 快速排序
  *
  * @author xichao
  * @date 20200330
