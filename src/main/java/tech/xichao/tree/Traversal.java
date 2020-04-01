@@ -127,12 +127,9 @@ public class Traversal {
 
     /**
      * 后序遍历 - 非递归版
-     *
      * 后序遍历递归定义：先左子树，后右子树，再根节点。
-     * 后序遍历的难点在于：
-     *      需要判断上次访问的节点是位于左子树，还是右子树。
-     * 		若是位于左子树，则需跳过根节点，先进入右子树，再回头访问根节点；
-     * 		若是位于右子树，则直接访问根节点。
+     * 从栈中拿出的节点：只有当是叶子节点（说明已经到底了）或当上一个节点为我的子节点时（说明子节点已经遍历完了）才出栈并打印；
+     *                如果不是就先入栈右子节点、再入栈左子节点（因为栈是后入先出）。
      */
     public static void postOrderStack(TreeNode root) {
         Stack<TreeNode> treeStack = new Stack<>();
@@ -141,10 +138,10 @@ public class Traversal {
 
         while (!treeStack.empty()) {
             node = treeStack.peek();
-            if ((Objects.nonNull(node.left) && Objects.nonNull(node.right))
+            if ((Objects.isNull(node.left) && Objects.isNull(node.right))
                     || (Objects.nonNull(pre) && (pre == node.left || pre == node.right))) {
-                printNode(node);
                 treeStack.pop();
+                printNode(node);
                 pre = node;
             } else {
                 if (Objects.nonNull(node.right)) {
@@ -159,6 +156,7 @@ public class Traversal {
 
     /**
      * 层序遍历
+     * 广度优先遍历，使用队列
      */
     public static void levelTraversal(TreeNode root) {
         Queue<TreeNode> q = new ArrayDeque<>();
